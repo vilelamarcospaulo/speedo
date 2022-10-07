@@ -8,7 +8,7 @@ async function getCurrentTab() {
 }
 
 function clearIntervalTab(pid) {
-  console.log(`> removing interval ${pid}`)
+  // console.log(`> removing interval ${pid}`)
   clearInterval(pid);
   return undefined;
 }
@@ -16,16 +16,16 @@ function clearIntervalTab(pid) {
 function continuousSpeedPlayers(speed) {
   [...document.querySelectorAll('video')].forEach(player => player.playbackRate = speed);
   const pid = setInterval(function () {
-    console.log(`> running interval to speedUp ${speed}x ${pid}`);
+    // console.log(`> running interval to speedUp ${speed}x ${pid}`);
     [...document.querySelectorAll('video')].forEach(player => player.playbackRate = speed);
   }, 500);
 
-  console.log(`> created interval to speedUp ${speed}x ${pid}`);
+  // console.log(`> created interval to speedUp ${speed}x ${pid}`);
   return pid;
 }
 
 function resetPlayers() {
-  console.log(`> reset speed to 1x`);
+  // console.log(`> reset speed to 1x`);
   [...document.querySelectorAll('video')].forEach(player => player.playbackRate = 1);
 }
 
@@ -38,7 +38,6 @@ async function tabExecPromise(tabId, func, args) {
         args,
       },
       (executionReturn) => { 
-        console.log('executionReturn', executionReturn)
         if(executionReturn && executionReturn[0]) {
           resolve(executionReturn[0].result) 
         }
@@ -68,7 +67,6 @@ async function updateSpeedRate(newSpeed) {
 
   chrome.action.setBadgeText({text: `${newSpeed}x`});
 
-  console.log(`> saving new state`, state)
   await saveState(state)
 }
 
