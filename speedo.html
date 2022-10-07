@@ -4,12 +4,24 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="./popup.css" />
+    <link rel="stylesheet" href="./speedo.css" />
   </head>
   <body>
     <script src="./speedo.js" type="module"></script>
-    <h1>FooBar</h1>
-    <ul></ul>
-
+    <div class="box">
+      <div class="input">
+        <select id="speed" name="speed">
+          <option value="0.75">0.75x</option>
+          <option value="1">1.00x</option>
+          <option value="1.25">1.25x</option>
+          <option value="1.5">1.50x</option>
+          <option value="1.75">1.75x</option>
+          <option value="2">2.00x</option>
+          <option value="2.25">2.25x</option>
+          <option value="2.5">2.50x</option>
+        </select>
+      </div>
+      <div class="pid"></div>
+    </div>
   </body>
 </html>

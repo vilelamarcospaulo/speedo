@@ -10,5 +10,18 @@
   },
   "action": {
     "default_popup": "speedo.html"
-  }
+  },
+  "background": {
+    "service_worker": "background.js",
+    "type": "module"
+  },
+  "permissions": [
+    "activeTab",
+    "scripting",
+    "storage",
+    "tabs"
+  ],
+  "host_permissions": [
+    "*://*/*"
+  ]
 }
